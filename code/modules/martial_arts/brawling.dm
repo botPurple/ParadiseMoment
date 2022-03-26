@@ -40,7 +40,7 @@
 			D.visible_message("<span class='danger'>[A] нокаутировал[genderize_ru(A.gender,"","а","о","и")] [D] мощным ударом в челюсть!</span>", \
 								"<span class='userdanger'>[A] нокаутировал[genderize_ru(A.gender,"","а","о","и")] [D] мощным ударом в челюсть!</span>")
 			D.apply_effect(10,WEAKEN,armor_block)
-			D.Weaken(3)
+			D.Weaken(5)
 			D.forcesay(GLOB.hit_appends)
 		else if(D.lying)
 			D.forcesay(GLOB.hit_appends)
