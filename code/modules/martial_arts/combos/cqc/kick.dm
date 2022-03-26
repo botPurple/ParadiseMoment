@@ -18,7 +18,7 @@
 		target.visible_message("<span class='warning'>[user] нокаутиру[pluralize_ru(user.gender,"ет","ют")] [target] пинком в голову!</span>", \
 					  		"<span class='userdanger'>[user] нокаутиру[pluralize_ru(user.gender,"ет","ют")] вас пинком в голову!</span>")
 		playsound(get_turf(user), 'sound/weapons/genhit1.ogg', 50, 1, -1)
-		target.SetSleeping(4)
-		target.adjustBrainLoss(5)
+		target.SetSleeping(15)
+		target.adjustBrainLoss(15)
 		add_attack_logs(user, target, "Knocked out with martial-art [src] : Kick", ATKLOG_ALL)
 		. = MARTIAL_COMBO_DONE

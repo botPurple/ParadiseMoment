@@ -7,11 +7,6 @@
 	has_explaination_verb = TRUE
 	combos = list(/datum/martial_combo/sleeping_carp/wrist_wrench, /datum/martial_combo/sleeping_carp/back_kick, /datum/martial_combo/sleeping_carp/stomach_knee, /datum/martial_combo/sleeping_carp/head_kick, /datum/martial_combo/sleeping_carp/elbow_drop)
 
-/datum/martial_art/the_sleeping_carp/can_use(mob/living/carbon/human/H)
-	if(length(H.reagents.addiction_list))
-		return FALSE
-	return ..()
-
 /datum/martial_art/the_sleeping_carp/grab_act(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
 	MARTIAL_ARTS_ACT_CHECK
 	var/obj/item/grab/G = D.grabbedby(A,1)
@@ -32,7 +27,7 @@
 		A.say(pick("ХА!", "ХЬЯ!", "КУА!", "ВУА!", "НЫА!", "НА!", "ЧУОО!", "ЧУУ!", "ВУО!", "КЙА!", "ХУУ!", "ХУОХ!", "ХИЙООХ!", "УДАР КАРПА!", "УКУС КАРПА!", "ВЫПАД КАРПА!"))
 	if(prob(D.getBruteLoss()) && !D.lying)
 		D.visible_message("<span class='warning'>[D] оступа[pluralize_ru(D.gender,"ет","ют")]ся и пада[pluralize_ru(D.gender,"ет","ют")]!</span>", "<span class='userdanger'>Удар [A] опрокидывает тебя на землю!</span>")
-		D.Weaken(3)
+		D.Weaken(4)
 	add_attack_logs(A, D, "Melee attacked with martial-art [src] : Punched", ATKLOG_ALL)
 	return TRUE
 

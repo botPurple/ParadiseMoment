@@ -10,7 +10,7 @@
 		target.visible_message("<span class='warning'>[user] [hit_name] [target] в спину!</span>", \
 						  "<span class='userdanger'>[user] [hit_name] вас в спину, заставив вас споткнуться и упасть!</span>")
 		step_to(target,get_step(target,target.dir),1)
-		target.Weaken(3)
+		target.Weaken(4)
 		playsound(get_turf(target), 'sound/weapons/punch1.ogg', 50, 1, -1)
 		add_attack_logs(user, target, "Melee attacked with martial-art [src] :  Back Kick", ATKLOG_ALL)
 		if(prob(80))

@@ -55,7 +55,7 @@
 							"<span class='userdanger'>[A] выбил[genderize_ru(A.gender,"","а","о","и")] вам ногу!</span>")
 		playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, 1, -1)
 		D.apply_damage(10, BRUTE)
-		D.Weaken(1)
+		D.Weaken(3)
 		add_attack_logs(A, D, "Melee attacked with martial-art [src] : Leg sweep", ATKLOG_ALL)
 	return TRUE
 
@@ -65,7 +65,7 @@
 	if(restraining && istype(G) && G.affecting == D)
 		D.visible_message("<span class='danger'>[A] бер[pluralize_ru(A.gender,"ет","ут")] [D] в удушающий захват!</span>", \
 							"<span class='userdanger'>[A] взял[genderize_ru(A.gender,"","а","о","и")] вас в удушающий захват</span>")
-		D.SetSleeping(10)
+		D.SetSleeping(20)
 		restraining = FALSE
 		if(G.state < GRAB_NECK)
 			G.state = GRAB_NECK
@@ -75,7 +75,7 @@
 
 	var/obj/item/I = null
 
-	if(prob(50))
+	if(prob(65))
 		if(!D.stat || !D.IsWeakened() || !restraining)
 			I = D.get_active_hand()
 			D.visible_message("<span class='warning'>[A] ударя[pluralize_ru(A.gender,"ет","ют")] кулаком по челюсти [D]!</span>", \
